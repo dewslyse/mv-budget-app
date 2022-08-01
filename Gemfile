@@ -30,6 +30,9 @@ gem 'jbuilder'
 # Lint files with RuboCop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# Add devise for authentication
+gem 'devise'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
