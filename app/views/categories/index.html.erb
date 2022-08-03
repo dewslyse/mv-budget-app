@@ -10,6 +10,7 @@
   <div>
     <p><%= category.icon %></p>
     <%= link_to category.name, category_expenses_path(category) %>
+    <p>$<%= category.total_sum %></p>
   </div>
 <% end %>
 
