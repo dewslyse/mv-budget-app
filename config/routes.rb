@@ -16,12 +16,8 @@ Rails.application.routes.draw do
 
     get 'sign_out', to: 'devise/sessions#destroy', as: 'sign_out'
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  
-  # Defines the root path route ("/")
-  # root "home#index"
-  
-  # resources :users
-  resources :categories
-  resources :expenses
+
+  resources :categories do
+    resources :expenses
+  end
 end
