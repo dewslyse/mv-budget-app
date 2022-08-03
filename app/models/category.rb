@@ -4,6 +4,7 @@ class Category < ApplicationRecord
   has_many :expenses, through: :category_expenses
 
   validates :name, presence: true
+  validates :icon, presence: true
 
   def total_sum
     expenses.sum(:amount)
