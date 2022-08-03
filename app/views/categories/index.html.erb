@@ -1,12 +1,20 @@
 <h1>Categories</h1>
 
-<%= link_to 'Log out', sign_out_path, method: :delete %>
+<div>
+  <%= link_to 'Log out', sign_out_path, method: :delete %>
+</div>
 
-<%= form_with(model: Category.new) do |f| %>
-  <div class="form-group">
-    <%= f.select :icon, 
-        options_for_select(%w[🥣 👩‍👩‍👧‍👦 🛒 📱 📚 🏡 ✈ 👕 🚗]) 
-    %>
+<br>
+
+<% @categories.each do |category| %>
+  <div>
+    <p><%= category.icon %></p>
+    <%= link_to category.name, category_expenses_path(category) %>
   </div>
 <% end %>
 
+<br>
+
+<div>
+  <%= link_to 'Add new category', new_category_path %>
+</div>
