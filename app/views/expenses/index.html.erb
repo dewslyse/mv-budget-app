@@ -1,1 +1,20 @@
 <h1>Expenses</h1>
+
+<h2><%= @category.name %></h2>
+<h3>$<%= @category.total_sum %></h3>
+
+<% if @expenses.any? %>
+  <% @expenses.each do |expense| %>
+    <div>
+      <p><%= expense.expense.name %></p>
+      <p><%= expense.expense.amount %></p>
+      <p><%= expense.expense.created_at %></p>
+    </div>
+  <% end %>
+  <% else %>
+  <p>No expenses yet</p>
+<% end %>
+
+<br>
+
+<%= link_to 'Add new expense', new_category_expense_path(@category) %>

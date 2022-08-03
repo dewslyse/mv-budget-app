@@ -1,0 +1,35 @@
+<h1>New Expense</h1>
+
+<%= form_with model: @expense, url: category_expenses_path do |f| %>
+
+  <% if @expense.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% @expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+</div>
+
+  <div>
+    <%= f.label :category %>
+    <%= f.select :category, @categories.map { |c| [c.name, c.id] } %>
+  </div>
+  
+  <div>
+    <%= f.submit %>    
+  </div>
+<% end %>
+
+<br>
