@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   before(:each) do
-    @user = User.create(name: "John Doe", email: 'jdoe@example.com', password: "password")
-    @category = Category.create(name: "Food", user_id: @user.id, icon: "icon-food")
+    @user = User.create(name: 'John Doe', email: 'jdoe@example.com', password: 'password')
+    @category = Category.create(name: 'Food', user_id: @user.id, icon: 'icon-food')
   end
 
   it 'is valid with valid attributes' do
@@ -26,8 +26,8 @@ RSpec.describe Category, type: :model do
   end
 
   it 'total_sum returns the sum of all expenses in the category' do
-    @expense1 = Expense.create(name: "Food", amount: 10, user_id: @user.id)
-    @expense2 = Expense.create(name: "Food", amount: 20, user_id: @user.id)
+    @expense1 = Expense.create(name: 'Food', amount: 10, user_id: @user.id)
+    @expense2 = Expense.create(name: 'Food', amount: 20, user_id: @user.id)
     @category.expenses << @expense1
     @category.expenses << @expense2
     expect(@category.total_sum).to eq(30)

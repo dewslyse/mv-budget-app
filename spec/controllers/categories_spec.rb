@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Categories', type: :request do
   before(:each) do
-    @user = User.create(name: "John Doe", email: 'jdoe@example.com', password: "password")    
+    @user = User.create(name: 'John Doe', email: 'jdoe@example.com', password: 'password')
     sign_in @user
-    Category.create(name: "Food", user_id: @user.id, icon: "icon-food")
+    Category.create(name: 'Food', user_id: @user.id, icon: 'icon-food')
   end
 
   describe 'GET /categories' do

@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Expenses', type: :request do
   before(:each) do
-    @user = User.create(name: "John Doe", email: 'jdoe@example.com', password: "password")    
+    @user = User.create(name: 'John Doe', email: 'jdoe@example.com', password: 'password')
     sign_in @user
-    @category = Category.create(name: "Food", user_id: @user.id, icon: "icon-food")
-    @expense = Expense.create(name: "Food", amount: 100)
+    @category = Category.create(name: 'Food', user_id: @user.id, icon: 'icon-food')
+    @expense = Expense.create(name: 'Food', amount: 100)
   end
 
   describe 'GET /expenses' do
