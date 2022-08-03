@@ -11,9 +11,9 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new
   end
-  
+
   # def edit; end
-  
+
   def create
     @category = Category.new(category_params)
     @category.user_id = current_user.id
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
-  
+
   # def update
   #   if @Category.update(category_params)
   #     redirect_to categories_url, notice: 'Category was successfully updated.'
@@ -31,18 +31,18 @@ class CategoriesController < ApplicationController
   #     flash[:notice] = 'Something went wrong.'
   #   end
   # end
-  
+
   # def destroy
   #   @Category.destroy
   #     redirect_to categories_url, notice: 'Category was successfully destroyed.'
   # end
-  
+
   private
-  
+
   # def set_category
   #   @Category = Category.find(params[:id])
   # end
-  
+
   def category_params
     params.require(:category).permit(:name, :icon)
   end

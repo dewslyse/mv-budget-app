@@ -1,13 +1,13 @@
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: [:index, :new, :create]
+  before_action :set_category, only: %i[index new create]
 
   def index
     @expenses = @category.category_expenses.order(created_at: :desc)
   end
 
   def new
-    @expense = Expense.new    
+    @expense = Expense.new
     @categories = current_user.categories
   end
 
@@ -15,7 +15,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.user = current_user
     @category.expenses.push(@expense)
-    
+
     if @expense.save
       redirect_to category_expenses_path, notice: 'Expense was successfully created.'
     else
