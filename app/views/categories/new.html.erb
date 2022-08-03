@@ -1,10 +1,8 @@
 <h1>Add new category</h1>
 
-<%= form_with model: @category, url: categories_path(@user)  do |f| %>
+<%= form_with model: @category, url: categories_path(@user), data: {turbo: false}  do |f| %>
   <% if @category.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
       <ul>
         <% @category.errors.each do |error| %>
           <li><%= error.full_message %></li>
