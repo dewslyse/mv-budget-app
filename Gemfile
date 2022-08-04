@@ -49,7 +49,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
-gem "sass-rails"
+gem 'sass-rails'
 
 # Font Awesome
 gem 'font-awesome-sass'
