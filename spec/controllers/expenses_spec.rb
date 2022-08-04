@@ -24,7 +24,7 @@ RSpec.describe 'Expenses', type: :request do
     end
 
     it 'response contains the correct text' do
-      expect(response.body).to include('Expenses')
+      expect(response.body).to include('Transactions')
     end
   end
 end
