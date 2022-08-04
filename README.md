@@ -4,9 +4,9 @@
 
 > A simple, user-friendly mobile web application that helps you manage your budget. You have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-<!-- ## Screenshot
+## Screenshot
 
-<img src="./screenshot.png">  -->
+<img src="./screenshot.png"> 
 
 ## Built With
 
