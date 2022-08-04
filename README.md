@@ -29,28 +29,39 @@ To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine:
 
-```$ git clone git@github.com:dewslyse/mv-budget-app.git```
+```
+$ git clone git@github.com:dewslyse/mv-budget-app.git
+```
 
 This will create a directory in the name of the project folder.
 
 - Navigate to project folder using 
 
-```$ cd mv-budget-app```
+```
+$ cd mv-budget-app
+```
 
 ### Install
 
-- Run `bundle install` to install all gems for the project.
+- Install all gems for the project by running:
+
+```
+$ bundle install
+```
+
 
 ### Create database
 - In the `config/` directory, create a new file with the name `local_env.yml` and add the following code:
 
 ```
-DATABASE_USERNAME: 'PostgreSQL Username'
-DATABASE_PASSWORD: 'PostgreSQL Password'
+DATABASE_USERNAME: 'Your-PostgreSQL-Username'
+DATABASE_PASSWORD: 'Your-PostgreSQL-Password'
 ```
 - Create the database by running: 
 
-```$ rails db:create```
+```
+$ rails db:create
+```
 
 ### Usage
 
