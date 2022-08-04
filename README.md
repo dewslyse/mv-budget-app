@@ -13,9 +13,9 @@
 - Ruby `3.1.2`
 - Rails `7.0.3`
 
-<!-- ## Live site 🚀
+## Live site 🚀
 
-🔗 [Heroku]() -->
+🔗 [Heroku](https://mv-budget.herokuapp.com/)
 
 ## Getting Started
 
