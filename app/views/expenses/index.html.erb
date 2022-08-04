@@ -1,9 +1,8 @@
 <%= render partial: 'shared/header', locals: {caption: 'Transactions'} %>
+<%= render 'shared/arrow_back' %>
+<%= render 'shared/logout' %>
 
 <main>
-  <%= render 'shared/arrow_back' %>
-  <%= render 'shared/logout' %>
-
   <div class="categories trans-cat-offset">
     <div class="category">
       <div class="category-details">
@@ -40,7 +39,7 @@
     <% end %>
   </div>
 
-  <div class="new-link">
-    <%= link_to 'Add new transaction', new_category_expense_path(@category) %>
-  </div>
-</main>
+  </main>
+<footer class="new-link">
+  <%= link_to 'Add new transaction', new_category_expense_path(@category) %>
+</footer>

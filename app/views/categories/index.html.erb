@@ -1,9 +1,8 @@
 <%= render partial: 'shared/header', locals: {caption: 'Categories'} %>
+<%= render 'shared/menu' %>
+<%= render 'shared/logout' %>
 
 <main>
-  <%= render 'shared/menu' %>
-  <%= render 'shared/logout' %>
-
   <div class="categories">
     <% if @categories.any? %>
       <% @categories.each do |category| %>
@@ -32,8 +31,8 @@
       </div>
     <% end %>
   </div>
-
-  <div class="new-link">
-    <%= link_to 'Add new category', new_category_path %>
-  </div>
 </main>
+
+<footer class="new-link">
+  <%= link_to 'Add new category', new_category_path %>
+</footer>
