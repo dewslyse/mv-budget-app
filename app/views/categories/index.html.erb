@@ -1,21 +1,39 @@
-<h1>Categories</h1>
+<%= render partial: 'shared/header', locals: {caption: 'Categories'} %>
 
-<div>
-  <%= link_to 'Log out', sign_out_path, method: :delete %>
-</div>
+<main>
+  <%= render 'shared/menu' %>
+  <%= render 'shared/logout' %>
 
-<br>
+  <div class="categories">
+    <% if @categories.any? %>
+      <% @categories.each do |category| %>
+        <%= link_to category_expenses_path(category) do %>
+          <div class="category">
+            <div class="category-details">
+              <div class="category-icon-box">
+                <span class="category-icon"><%= category.icon %></span>
+              </div>
 
-<% @categories.each do |category| %>
-  <div>
-    <p><%= category.icon %></p>
-    <%= link_to category.name, category_expenses_path(category) %>
-    <p>$<%= category.total_sum %></p>
+              <div class="category-name">
+                <h2><%= category.name %></h2>
+                <p><%= category.created_at.strftime("%d %b %Y") %></p>
+              </div>
+            </div>
+
+            <div class="amount">
+              <p>$<%= category.total_sum %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <% else %>
+      <div class="category">
+        <p class="nothing-yet">No categories yet</p>
+      </div>
+    <% end %>
   </div>
-<% end %>
 
-<br>
-
-<div>
-  <%= link_to 'Add new category', new_category_path %>
-</div>
+  <div class="new-link">
+    <%= link_to 'Add new category', new_category_path %>
+  </div>
+</main>

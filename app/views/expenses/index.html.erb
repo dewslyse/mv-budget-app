@@ -1,20 +1,46 @@
-<h1>Expenses</h1>
+<%= render partial: 'shared/header', locals: {caption: 'Transactions'} %>
 
-<h2><%= @category.name %></h2>
-<h3>$<%= @category.total_sum %></h3>
+<main>
+  <%= render 'shared/arrow_back' %>
+  <%= render 'shared/logout' %>
 
-<% if @expenses.any? %>
-  <% @expenses.each do |expense| %>
-    <div>
-      <p><%= expense.expense.name %></p>
-      <p><%= expense.expense.amount %></p>
-      <p><%= expense.expense.created_at %></p>
+  <div class="categories trans-cat-offset">
+    <div class="category">
+      <div class="category-details">
+        <div class="category-icon-box">
+          <span class="category-icon"><%= @category.icon %></span>
+        </div>
+
+        <div class="category-name">
+          <h2><%= @category.name %></h2>
+        </div>
+      </div>
+
+      <div class="amount">
+        <p>$<%= @category.total_sum %></p>
+      </div>
     </div>
-  <% end %>
-  <% else %>
-  <p>No expenses yet</p>
-<% end %>
+  </div>
+  
+  <div class="transactions">
+    <% if @expenses.any? %>
+      <% @expenses.each do |expense| %>
+        <div class="transact">
+          <div class="transact-details">
+            <h3><%= expense.expense.name %></h3>
+            <p><%= expense.expense.amount %></p>
+          </div>
+          <p class="transact-date"><%= expense.expense.created_at.strftime("%d %b %Y") %></p>
+        </div>
+      <% end %>
+      <% else %>
+      <div class="transact">
+        <p>No transactions yet</p>
+      </div>
+    <% end %>
+  </div>
 
-<br>
-
-<%= link_to 'Add new expense', new_category_expense_path(@category) %>
+  <div class="new-link">
+    <%= link_to 'Add new transaction', new_category_expense_path(@category) %>
+  </div>
+</main>
