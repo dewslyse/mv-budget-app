@@ -1,0 +1,22 @@
+<%= render partial: 'shared/header', locals: {caption: 'Forgot password?'} %>
+<%= render 'shared/arrow_back' %>
+
+<main>
+  <div class="form">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div>
+        <%= f.email_field :email, autocomplete: "email", placeholder: 'Email', required: true, class: "field"  %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Send me reset password instructions", class: 'login reset-btn' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="shared-links">
+    <%= render "devise/shared/links" %>
+  </div>
+</main>

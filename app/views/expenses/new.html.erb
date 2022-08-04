@@ -1,0 +1,36 @@
+<%= render partial: 'shared/header', locals: {caption: 'New Transaction'} %>
+<%= render 'shared/arrow_back_trans' %>
+<%= render 'shared/logout' %>
+
+<main>
+  <div class="form">
+    <%= form_with model: @expense, url: category_expenses_path do |f| %>
+      <% if @expense.errors.any? %>
+        <div style="color: red">
+          <ul>
+            <% @expense.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.text_field :name, autocomplete: "name", placeholder: 'Name', required: true, class: "field" %>
+      </div>
+
+      <div>
+      <%= f.text_field :amount, autocomplete: "amount", placeholder: 'Amount', required: true, type: "number", class: "field" %>
+    </div>
+
+      <div class="field">
+        <%= f.label :category %>
+        <%= f.select :category, @categories.map { |c| [c.name, c.id] }, { :include_blank => "-- Select --" }, required: true, class: "category-select" %>
+      </div>
+      
+      <div>
+        <%= f.submit "Save", class: 'login add-trans-btn' %>    
+      </div>
+    <% end %>
+  </div>
+</main>

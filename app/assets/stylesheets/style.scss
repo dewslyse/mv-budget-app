@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import "font-awesome";
+
+$main-bg: #f5f6f8;
+$green: #5fb523;
+$dark: #434b54;
+$blue: #3778c2;
+$white: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $main-bg;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  max-width: 768px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.splash-links {
+  width: 100%;
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.login,
+.signup {
+  border-radius: 5px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 16px;
+  font-weight: 500;
+  background-color: $white;
+  color: black;
+}
+
+.login {
+  color: $white;
+  background-color: $blue;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  h1 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.nav-icon-box {
+  margin-left: 15px;
+  position: absolute;
+  top: 20px;
+}
+
+.nav-icon-box-right {
+  margin-left: unset;
+  right: 0;
+  margin-right: 15px;
+}
+
+.nav-icon {
+  color: $white;
+}
+
+.form {
+  background-color: $white;
+  margin: 10px;
+  padding: 12px;
+}
+
+.field {
+  width: 100%;
+  padding: 15px 5px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $main-bg;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.reg-btn,
+.login-btn,
+.reset-btn,
+.add-cat-btn,
+.add-trans-btn {
+  padding: 10px;
+  border: none;
+  background-color: $green;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.icon-select,
+.category-select {
+  border: 1px solid $blue;
+  padding: 7px;
+  margin-left: 12px;
+  border-radius: 5px;
+}
+
+.reset-btn {
+  text-transform: unset;
+}
+
+.shared-links {
+  margin-top: 30px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $dark;
+  }
+}
+
+.new-link {
+  background-color: $green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+
+  a {
+    text-decoration: none;
+    border: 1px solid $white;
+    color: $white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+.categories {
+  margin: 12px 12px 80px;
+
+  a {
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: $dark;
+    }
+  }
+}
+
+.category {
+  background-color: $white;
+  padding: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-details {
+  display: flex;
+  align-items: center;
+}
+
+.category-icon-box {
+  background-color: $main-bg;
+  border-radius: 5px;
+  height: 75px;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-icon {
+  font-size: 3rem;
+  vertical-align: middle;
+}
+
+.category-name {
+  margin-left: 16px;
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 0.8125rem;
+    margin-top: 10px;
+  }
+}
+
+.amount {
+  p {
+    font-weight: bold;
+  }
+}
+
+.trans-cat-offset {
+  margin-bottom: unset;
+}
+
+.transactions {
+  margin: 12px 12px 80px;
+  padding: 10px;
+}
+
+.transact {
+  border-radius: 5px;
+  background-color: $white;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.transact-details {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    font-weight: 500;
+  }
+}
+
+.transact-date {
+  font-size: 0.75rem;
+  margin-top: 12px;
+}

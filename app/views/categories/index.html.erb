@@ -1,0 +1,38 @@
+<%= render partial: 'shared/header', locals: {caption: 'Categories'} %>
+<%= render 'shared/menu' %>
+<%= render 'shared/logout' %>
+
+<main>
+  <div class="categories">
+    <% if @categories.any? %>
+      <% @categories.each do |category| %>
+        <%= link_to category_expenses_path(category) do %>
+          <div class="category">
+            <div class="category-details">
+              <div class="category-icon-box">
+                <span class="category-icon"><%= category.icon %></span>
+              </div>
+
+              <div class="category-name">
+                <h2><%= category.name %></h2>
+                <p><%= category.created_at.strftime("%d %b %Y") %></p>
+              </div>
+            </div>
+
+            <div class="amount">
+              <p>$<%= category.total_sum %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <% else %>
+      <div class="category">
+        <p class="nothing-yet">No categories yet</p>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+<footer class="new-link">
+  <%= link_to 'Add new category', new_category_path %>
+</footer>

@@ -1,0 +1,36 @@
+<%= render partial: 'shared/header', locals: {caption: 'New Category'} %>
+<%= render 'shared/arrow_back' %>
+<%= render 'shared/logout' %>
+
+<main>
+  <div class="form">
+    <%= form_with model: @category, url: categories_path(@user), data: {turbo: false}  do |f| %>
+      <% if @category.errors.any? %>
+        <div style="color: red">
+          <ul>
+            <% @category.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.text_field :name, autocomplete: "name", placeholder: 'Name', required: true, class: "field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :icon %>
+        <%= f.select :icon, 
+            options_for_select(%w[🥣 👩‍👩‍👧‍👦 🛒 📱 📚 🏡 ✈ 👕 🚗]), {:include_blank => "-- Select --"}, required: true, class: "icon-select"
+        %>
+      </div>
+      
+      <div>
+        <%= f.submit "Save", class: 'login add-cat-btn' %>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+
