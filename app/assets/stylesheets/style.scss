@@ -109,12 +109,21 @@ header {
 
 .reg-btn,
 .login-btn,
-.reset-btn {
+.reset-btn,
+.add-cat-btn,
+.add-trans-btn {
   padding: 10px;
   border: none;
   background-color: $green;
   width: 100%;
   margin: 20px 0;
+}
+
+.icon-select {
+  border: 1px solid $blue;
+  padding: 7px;
+  margin-left: 12px;
+  border-radius: 5px;
 }
 
 .reset-btn {
